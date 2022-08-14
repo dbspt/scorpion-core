@@ -1,0 +1,12 @@
+[capabilities]
+# Defina o browser a ser utilizado
+# chrome | firefox | edge
+browser = "chrome"
+# Coloque aqui a lista de pastas a serem 
+# compartilhadas com o Scorpion Core
+require = [
+    "./dist/support/*.js",
+    "./dist/step_definitions/*.js"
+]
+# Defina a url para automação remota
+server = ""

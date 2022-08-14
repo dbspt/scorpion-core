@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "esnext",
+    "moduleResolution": "node",
+    "sourceMap": false,
+    "declaration": false,
+    "removeComments": false,
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "outDir": "./node_modules/@dbservices/scorpion-core",
+    "rootDir": "./",
+    "typeRoots": ["../node_modules/@types"],
+    "types": ["node"]
+  },
+  "exclude": ["./node_modules/", "./tests/"]
+}
