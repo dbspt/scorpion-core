@@ -6,7 +6,7 @@ import {
   ITestCaseHookParameter,
   Status,
 } from "@cucumber/cucumber";
-import { Driver, Selector } from "./";
+import { Config, Driver, Selector } from "./";
 import { Screenshot } from "./web";
 import * as Report from "@dbservices/scorpion-report";
 
@@ -52,10 +52,20 @@ BeforeAll(async function () {
 });
 
 AfterAll(async function () {
-  setTimeout(async function () {
-    await Report.generate({
-      jsonFile: "reports/cucumber_report.json",
-      output: "reports/report.html",
-    });
-  }, 1000);
+  if (await new Config().getValue("husky.url")) {
+    setTimeout(async function () {
+      let huskyUrl = await new Config().getValue("husky.url");
+      let huskyAppId = await new Config().getValue("husky.app_id");
+      let huskyToken = await new Config().getValue("husky.token");
+      await Report.generate({
+        jsonFile: "reports/cucumber_report.json",
+        output: "reports/report.html",
+        husky: {
+          url: huskyUrl,
+          appId: huskyAppId,
+          token: huskyToken,
+        }
+      });
+    }, 1000);
+  }
 });

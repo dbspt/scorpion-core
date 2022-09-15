@@ -18,7 +18,7 @@
   "dependencies": {
     "@cucumber/pretty-formatter": "^1.0.0",
     "@dbservices/scorpion-html": "^1.0.2",
-    "@dbservices/scorpion-report": "^1.0.1",
+    "@dbservices/scorpion-report": "^1.1.0",
     "axios": "^0.27.2",
     "chai": "^4.3.6",
     "crypto-js": "^4.1.1",
